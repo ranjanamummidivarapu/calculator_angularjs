@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+    <script src="Calculator_javascript.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="root">
+<div id = "calculator1" ng-controller = "calculatorController" >
+    <input type = "text" class = "textbox" value = "{{display()}}" >
+    <div id="numbersDiv" >
+        <button ng-repeat = "number in numbers" id = "b{{number}}" value=number ng-click = "append(number)">{{number}}</button>
+    </div>
+    <div id="operatorsDiv" >
+        <button ng-repeat = "operator in operators" id = "b{{operator}}" value=operator ng-click = "compute(operator)">{{operator}}</button>
+    </div>
+</div>
+<div id = "calculator2" ng-controller = "calculatorController" >
+    <input type = "text" class = "textbox" value = "{{display()}}" >
+    <div id="numbersDiv" >
+        <button ng-repeat = "number in numbers" id = "b{{number}}" value=number ng-click = "append(number)">{{number}}</button>
+    </div>
+    <div id="operatorsDiv" >
+        <button ng-repeat = "operator in operators" id = "b{{operator}}" value = operator ng-click = "compute(operator)">{{operator}}</button>
+    </div>
+</div>
+</body>
+</html>
